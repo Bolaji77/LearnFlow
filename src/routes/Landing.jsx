@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Notebook, Menu, X } from "lucide-react";
+import TestimonialGrid from "../components/TestimonialGrid";
 
 function Landing() {
   const [isOpen, setIsOpen] = useState(false);
@@ -151,50 +152,168 @@ function Landing() {
         <img src="/src/assets/Codecov.png" alt="" />
       </div>
 
-        
       <div className="bg-white w-full p-12">
-  {/* Main heading */}
-  <div className="flex justify-center">
-    <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-center">
-      Special features that make <br /> our online courses the best
-    </h1>
-  </div>
+        {/* Main heading */}
+        <div className="flex justify-center">
+          <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-center">
+            Special features that make <br /> our online courses the best
+          </h1>
+        </div>
 
-  {/* Features section */}
-  <div className="flex flex-wrap justify-center gap-8 mt-12">
-    <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
-      <h2 className="font-bold text-xl sm:text-2xl mb-4">Made by Experts</h2>
-      <p className="text-lg sm:text-xl leading-relaxed">
-        Our programming languages courses are meticulously crafted and taught by
-        industry experts who bring years of practical experience.
-      </p>
-      <img src="/src/assets/frame.png" alt="" className="ml-auto mt-4 w-10 h-10" />
-    </div>
+        {/* Features section */}
+        <div className="flex flex-wrap justify-center gap-8 mt-12">
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+            <h2 className="font-bold text-xl sm:text-2xl mb-4">
+              Made by Experts
+            </h2>
+            <p className="text-lg sm:text-xl leading-relaxed">
+              Our programming languages courses are meticulously crafted and
+              taught by industry experts who bring years of practical
+              experience.
+            </p>
+            <img
+              src="/src/assets/frame.png"
+              alt=""
+              className="ml-auto mt-4 w-10 h-10"
+            />
+          </div>
 
-    <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
-      <h2 className="font-bold text-xl sm:text-2xl mb-4">Career Opportunities</h2>
-      <p className="text-lg sm:text-xl leading-relaxed">
-        Benefit from our job placement assistance services that connect qualified
-        learners with relevant career paths.
-      </p>
-      <img src="/src/assets/briefcase.png" alt="" className="ml-auto mt-4 w-10 h-10" />
-    </div>
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+            <h2 className="font-bold text-xl sm:text-2xl mb-4">
+              Career Opportunities
+            </h2>
+            <p className="text-lg sm:text-xl leading-relaxed">
+              Benefit from our job placement assistance services that connect
+              qualified learners with relevant career paths.
+            </p>
+            <img
+              src="/src/assets/briefcase.png"
+              alt=""
+              className="ml-auto mt-4 w-10 h-10"
+            />
+          </div>
 
-    <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
-      <h2 className="font-bold text-xl sm:text-2xl mb-4">Collaboration</h2>
-      <p className="text-lg sm:text-xl leading-relaxed">
-        Study at your own pace and on your own schedule, which is ideal for those
-        with work, family, or other commitments.
-      </p>
-      <img src="/src/assets/teacher.png" alt="" className="ml-auto mt-4 w-10 h-10" />
-    </div>
-  </div>
-</div>
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+            <h2 className="font-bold text-xl sm:text-2xl mb-4">
+              Collaboration
+            </h2>
+            <p className="text-lg sm:text-xl leading-relaxed">
+              Study at your own pace and on your own schedule, which is ideal
+              for those with work, family, or other commitments.
+            </p>
+            <img
+              src="/src/assets/teacher.png"
+              alt=""
+              className="ml-auto mt-4 w-10 h-10"
+            />
+          </div>
+        </div>
 
+        <hr className="border-[1px] border-gray-500 my-6 mx-auto w-full mt-8" />
 
-<hr className="border-[1px] border-black my-6 mx-auto w-full" />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 pt-8 px-4">
+          <img
+            src="/src/assets/frame1.png"
+            alt=""
+            className="w-full max-w-md object-contain"
+          />
 
+          <div className="w-full max-w-lg text-center md:text-left">
+            <h2
+              className="font-bold text-2xl sm:text-3xl lg:text-4xl"
+              style={{ fontFamily: "DM Sans" }}
+            >
+              Collaborate & learn with our platform
+            </h2>
 
+            <p
+              className="font-normal p-4 text-gray-500 text-lg sm:text-xl"
+              style={{
+                fontFamily: "DM Sans",
+                fontSize: "22px",
+                lineHeight: "1.6",
+              }}
+            >
+              We offer wide range of language courses taught by experienced and
+              qualified instructors who are passionate about teaching and
+              dedicated to helping achieve your language goals.
+            </p>
+
+            <Link
+              className="inline-flex items-center justify-center px-6 py-3 bg-yellow-600 font-medium rounded-lg hover:bg-yellow-500 transition-colors mt-4"
+              to="/signup"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-8 pt-8 px-4">
+          <img
+            src="/src/assets/frame2.png"
+            alt=""
+            className="w-full max-w-md object-contain"
+          />
+
+          <div className="w-full max-w-lg text-center md:text-left">
+            <h2
+              className="font-bold text-2xl sm:text-3xl lg:text-4xl"
+              style={{ fontFamily: "DM Sans" }}
+            >
+              Propel your career & expand knowledge at any level
+            </h2>
+
+            <p
+              className="font-normal p-4 text-gray-500 text-lg sm:text-xl"
+              style={{
+                fontFamily: "DM Sans",
+                fontSize: "22px",
+                lineHeight: "1.6",
+              }}
+            >
+              LearnFlow is an online course class that provides various
+              categories of programming courses.
+            </p>
+
+            <Link
+              className="inline-flex items-center justify-center px-6 py-3 bg-yellow-600 font-medium rounded-lg hover:bg-yellow-500 transition-colors mt-4"
+              to="/signup"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <section className="bg-black grid justify-center">
+        <h1 className="text-white text-5xl text-center font-semibold p-8">
+          Learners like you achieve their <br /> goal through our course
+        </h1>
+        <p className="text-white text-center text-xl">
+          We believe everyone has something to give. Share your skilss & <br />
+          experience with students around the world by teaching free or paid.
+        </p>
+
+        <TestimonialGrid />
+      </section>
+
+      <section className="bg-white py-[100px]">
+        <div className="flex bg-[#dfb84b] w-[70%] mx-auto rounded-2xl py-8 px-12">
+          <div>
+            <h2 className="font-bold text-4xl text-left">Expand your skillsets & <br /> knowledge at any level.</h2>
+            <p className="py-4 text-xl">
+              Learn at your own pace with lifetime access on <br /> mobile and desktop.
+            </p>
+            <Link
+                className="inline-flex  items-center justify-center px-6 py-3 bg-black text-white   font-medium rounded-lg hover:bg-yellow-500 hover:text-black transition-colors"
+                to="/signup"
+              >
+                Get Started
+              </Link>
+          </div>
+          <img src="/src/assets/dash.png" alt="dashboard image" className="h-[300px] w-[300px]"/>
+        </div>
+      </section>
     </>
   );
 }
