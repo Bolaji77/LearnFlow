@@ -298,22 +298,105 @@ function Landing() {
       </section>
 
       <section className="bg-white py-[100px]">
-        <div className="flex bg-[#dfb84b] w-[70%] mx-auto rounded-2xl py-8 px-12">
-          <div>
-            <h2 className="font-bold text-4xl text-left">Expand your skillsets & <br /> knowledge at any level.</h2>
-            <p className="py-4 text-xl">
-              Learn at your own pace with lifetime access on <br /> mobile and desktop.
+        <div className="w-[80%] bg-[#dfb84b] rounded-xl px-8 py-12 flex flex-col md:flex-row items-center justify-between overflow-hidden mx-auto">
+          {/* Left Side */}
+          <div className="md:w-1/2 space-y-6">
+            <h2 className="text-4xl font-bold text-black leading-tight">
+              Expand your skills & <br /> knowledge at any level.
+            </h2>
+            <p className="text-lg text-black/80">
+              Learn at your own pace with lifetime access on mobile and desktop.
             </p>
             <Link
-                className="inline-flex  items-center justify-center px-6 py-3 bg-black text-white   font-medium rounded-lg hover:bg-yellow-500 hover:text-black transition-colors"
-                to="/signup"
-              >
-                Get Started
-              </Link>
+              className="inline-flex  items-center justify-center px-6 py-3 bg-black text-white   font-medium rounded-lg hover:bg-yellow-500 hover:text-black transition-colors"
+              to="/signup"
+            >
+              Get Started
+            </Link>
           </div>
-          <img src="/src/assets/dash.png" alt="dashboard image" className="h-[300px] w-[300px]"/>
+
+          {/* Right Side */}
+          <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center relative">
+            <img
+              src="/src/assets/dash.png"
+              alt="Learning preview"
+              className=" rounded-lg shadow-lg transform rotate-[-15deg] scale-105 ml-auto translate-x-32 translate-y-24 "
+            />
+          </div>
         </div>
       </section>
+
+      <footer className="bg-black p-8 sm:p-16 text-white">
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
+          {/* Logo & Description */}
+          <div className="max-w-sm">
+            <Link to="/" className="flex items-center space-x-2 mb-4">
+              <Notebook className="h-8 w-8 text-white" />
+              <span className="text-xl font-semibold">LearnFlow</span>
+            </Link>
+            <p className="text-gray-300">
+              Top learning experiences that create more talent in the world.
+            </p>
+          </div>
+
+          {/* Links Section */}
+          <div className="flex flex-wrap sm:flex-nowrap gap-8 sm:gap-16">
+            <div>
+              <h3 className="font-bold text-lg mb-2">Links</h3>
+              <Link to="/about" className="block hover:underline">
+                About
+              </Link>
+              <Link to="/programs" className="block hover:underline">
+                Programs
+              </Link>
+              <Link to="/contact" className="block hover:underline">
+                Contact
+              </Link>
+              <Link to="/faq" className="block hover:underline">
+                FAQs
+              </Link>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-2">Social</h3>
+              <Link to="/about" className="block hover:underline">
+                Twitter
+              </Link>
+              <Link to="/programs" className="block hover:underline">
+                LinkedIn
+              </Link>
+              <Link to="/contact" className="block hover:underline">
+                Facebook
+              </Link>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-2">Legal</h3>
+              <Link to="/about" className="block hover:underline">
+                Terms
+              </Link>
+              <Link to="/programs" className="block hover:underline">
+                Privacy
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <hr className="border-[1px] border-gray-500 my-6 mx-auto w-full mt-8" />
+
+        <div className="flex justify-between">
+          <div>
+            <p>&copy; 2024 The Programmers University. All rights reserved</p>
+          </div>
+          <div className="flex gap-8">
+            <img src="/src/assets/twitter.png" alt="" />
+            <img src="/src/assets/linkedin.png" alt="" />
+            <img src="/src/assets/facebook.png" alt="" />
+            <img src="/src/assets/github.png" alt="" />
+            <img src="/src/assets/web.png" alt="" />
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

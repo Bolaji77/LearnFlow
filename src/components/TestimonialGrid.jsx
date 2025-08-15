@@ -19,7 +19,7 @@ export default function TestimonialGrid() {
         {testimonials.map((text, index) => (
           <div
             key={index}
-            className="mb-6 break-inside-avoid border border-gray-600 rounded-2xl p-6 bg-[#181818]"
+            className="mb-6 break-inside-avoid border border-gray-600 rounded-2xl p-6 bg-[#181818] hover:border-white"
           >
             <div className="flex items-center gap-4 mb-4">
               <img
