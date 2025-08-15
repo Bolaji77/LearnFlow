@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Notebook } from "lucide-react";
+import { BookOpenText } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function Signup(){
     const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState();
     const [loading, setLoading] = useState();
@@ -37,59 +38,95 @@ function Signup(){
         }
     }
     return(
-        <div className="max-w-md mx-auto mt-10">
-            <div className="bg-white rounded-lg shadow-md p-8">
-                <div className="flex flex-col items-center mb-6">
-                    <Notebook className="h-12 w-12 text-indigo-600 mb-2" />
-                    <h2 className=" ">Welcome to QuickNotes</h2>
-                    <p>Create an account for free</p>
-                {
-                    error && (<div className="bg-red-50 text-red-700 p-3 rounded-md mb-4 text-sm">
-                        {error};
-                        ;
-                        
-                    </div>)
-                }
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
-                            <input type="email"
-                                   id="email"
-                                   value={email}
-                                   placeholder="example@email.com"
-                                   onChange={(e)=>setEmail(e.target.value)}
-                                   required
-                                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                        </div>
-                        <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password:</label>
-                            <input type="password"
-                                   id="password"
-                                   value={password}
-                                   placeholder="*********"
-                                   onChange={(e)=>setPassword(e.target.value)}
-                                   required
-                                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-5" />
-                        </div>
-                        <div>
-                            <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700 mb-1">Confirm Password:</label>
-                            <input type="password"
-                                   id="confirm-password"
-                                   value={confirmPassword}
-                                   placeholder="*********"
-                                   onChange={(e)=>setConfirmPassword(e.target.value)}
-                                   required
-                                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                        </div>
-                        <button className="w-full bg-indigo-700 text-white py-2 rounded-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed mt-4" type="submit" disabled={loading}>{loading ? "Creating Account..." : "Create Account"}</button>
-                    </form>
-
-                    <div>
-                        <p className="text-gray-600">Already have an account? <Link to="/login">Login</Link></p>
-                    </div>
-                </div>
-            </div>
+<div className="flex flex-col md:flex-row justify-between items-center md:items-start max-w-5xl mx-auto mt-10 gap-8 px-4">
+  
+  {/* Form Section */}
+  <div className="bg-white rounded-lg shadow-md p-8 w-full md:w-1/2">
+    <div className="flex flex-col items-center mb-6">
+      <BookOpenText className="h-12 w-12 text-black mb-2" />
+      <p>LearnFlow</p>
+      <h2 className="font-bold text-xl text-center">Welcome to QuickNotes</h2>
+      <p>Create an account for free</p>
+      {error && (
+        <div className="bg-red-50 text-red-700 p-3 rounded-md mb-4 text-sm">
+          {error}
         </div>
+      )}
+      <form onSubmit={handleSubmit} className="w-full">
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+          <input 
+            type="email"
+            id="email"
+            value={email}
+            placeholder="example@email.com"
+            onChange={(e)=>setEmail(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">Username:</label>
+          <input 
+            type="text"
+            id="username"
+            value={username}
+            placeholder="username"
+            onChange={(e)=>setUsername(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password:</label>
+          <input 
+            type="password"
+            id="password"
+            value={password}
+            placeholder="*********"
+            onChange={(e)=>setPassword(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+        <div>
+          <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700 mb-1">Confirm Password:</label>
+          <input 
+            type="password"
+            id="confirm-password"
+            value={confirmPassword}
+            placeholder="*********"
+            onChange={(e)=>setConfirmPassword(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+        <button 
+          className="w-full bg-black text-white py-2 rounded-md hover:bg-indigo-800 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed mt-4" 
+          type="submit" 
+          disabled={loading}
+        >
+          {loading ? "Creating Account..." : "Register"}
+        </button>
+      </form>
+      <div className="mt-4">
+        <p className="text-gray-600">Already have an account? <Link to="/login" className="text-black font-bold">Login</Link></p>
+      </div>
+    </div>
+  </div>
+
+  {/* Image Section */}
+  <div className="w-full md:w-1/2 flex justify-center">
+    <img 
+      src="/src/assets/small-team.png" 
+      alt="Small Team" 
+      className="w-full max-w-md rounded-lg object-cover"
+    />
+  </div>
+</div>
+
     )
 }
 export default Signup;

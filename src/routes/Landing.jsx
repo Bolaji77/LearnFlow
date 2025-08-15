@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-import { Notebook, Menu, X } from "lucide-react";
+import { Notebook, Menu, X, BookOpenText } from "lucide-react";
 import TestimonialGrid from "../components/TestimonialGrid";
 
 function Landing() {
@@ -15,7 +14,7 @@ function Landing() {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
-                <Notebook className="h-8 w-8 text-white" />
+                <BookOpenText className="h-8 w-8 text-white" />
                 <span className="text-xl font-semibold text-white">
                   LearnFlow
                 </span>
@@ -96,6 +95,7 @@ function Landing() {
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6"></div>
+            
             <h1 className="text-4xl md:text-5xl font-bold text-white max-w-2xl mx-auto">
               The free, fun and effective way to learn a language
             </h1>
@@ -161,8 +161,8 @@ function Landing() {
         </div>
 
         {/* Features section */}
-        <div className="flex flex-wrap justify-center gap-8 mt-12">
-          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+        <div className="flex flex-wrap justify-center gap-8 mt-12 ">
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px] hover:shadow-xl">
             <h2 className="font-bold text-xl sm:text-2xl mb-4">
               Made by Experts
             </h2>
@@ -178,7 +178,7 @@ function Landing() {
             />
           </div>
 
-          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px] hover:shadow-xl">
             <h2 className="font-bold text-xl sm:text-2xl mb-4">
               Career Opportunities
             </h2>
@@ -193,7 +193,7 @@ function Landing() {
             />
           </div>
 
-          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px]">
+          <div className="bg-gray-200 p-8 rounded-lg w-full sm:w-[350px] hover:shadow-xl">
             <h2 className="font-bold text-xl sm:text-2xl mb-4">
               Collaboration
             </h2>
@@ -331,7 +331,7 @@ function Landing() {
           {/* Logo & Description */}
           <div className="max-w-sm">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <Notebook className="h-8 w-8 text-white" />
+              <BookOpenText className="h-8 w-8 text-white" />
               <span className="text-xl font-semibold">LearnFlow</span>
             </Link>
             <p className="text-gray-300">
@@ -384,11 +384,11 @@ function Landing() {
 
         <hr className="border-[1px] border-gray-500 my-6 mx-auto w-full mt-8" />
 
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <div>
             <p>&copy; 2024 The Programmers University. All rights reserved</p>
           </div>
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-8">
             <img src="/src/assets/twitter.png" alt="" />
             <img src="/src/assets/linkedin.png" alt="" />
             <img src="/src/assets/facebook.png" alt="" />
